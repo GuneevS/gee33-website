@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GEE33 — We build custom software and AI systems that give your business an unfair advantage. From idea to launch in weeks, not months.">
-  <meta name="keywords" content="custom software, AI development, business applications, South Africa, Johannesburg">
-  <meta property="og:title" content="GEE33 — Your Edge, Engineered">
+  <meta name="description" content="GEE33 - Custom software and AI systems that give your business an unfair advantage. From idea to launch in weeks, not months.">
+  <meta name="keywords" content="custom software, AI development, business automation, South Africa, app development">
+  <meta name="author" content="GEE33">
+  
+  <meta property="og:title" content="GEE33 | Your Edge, Engineered">
   <meta property="og:description" content="Custom software and AI systems that give your business an unfair advantage.">
   <meta property="og:type" content="website">
-  <title>GEE33 — Your Edge, Engineered</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@700,800,900&display=swap" rel="stylesheet">
+  <meta property="og:url" content="https://gee33.co.za">
+  
+  <title>GEE33 | Your Edge, Engineered</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <style>
+    :root {
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+  </style>
 </head>
 <body>
-  <!-- Custom Cursor -->
   <div class="cursor-ring" id="cursorRing"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
-  <!-- Background -->
   <div class="bg-canvas">
     <div class="gradient-orb orb-1" id="orb1"></div>
     <div class="gradient-orb orb-2" id="orb2"></div>
@@ -28,48 +40,51 @@
   <div class="grain"></div>
   <div class="grid-lines"></div>
 
-  <!-- Navigation -->
   <nav class="nav" id="nav">
     <a href="index.html" class="logo">
-      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20c7.5 0 14.1-4.1 17.5-10.2" stroke="#4f46e5" stroke-width="3" stroke-linecap="round"/>
-        <path d="M24 14c-5.523 0-10 4.477-10 10s4.477 10 10 10" stroke="#f8f7f4" stroke-width="3" stroke-linecap="round"/>
-        <rect x="30" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
-        <rect x="36" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4C11.164 4 4 11.164 4 20s7.164 16 16 16c6.5 0 12.2-3.9 14.7-9.5" stroke="#f8f7f4" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M20 12v8h8" stroke="#f8f7f4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="28" y="6" width="8" height="2.5" rx="1.25" fill="#4f46e5"/>
+        <rect x="28" y="11" width="8" height="2.5" rx="1.25" fill="#4f46e5"/>
+        <rect x="28" y="16" width="8" height="2.5" rx="1.25" fill="#4f46e5"/>
       </svg>
       <span class="logo-wordmark">GEE<span class="accent">33</span></span>
     </a>
+    
     <div class="nav-links">
       <a href="why-us.html" class="nav-link">Why Us</a>
       <a href="results.html" class="nav-link">Results</a>
       <a href="services.html" class="nav-link">What We Do</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-cta">Book a Call</a>
+      <a href="contact.html" class="btn nav-cta">Book a Call</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
 
-  <!-- Main Content -->
   <main class="main">
-    <!-- Hero Section -->
+    
     <section class="hero" id="hero">
       <div class="hero-content">
         <div class="hero-label">
           <span class="hero-label-dot"></span>
-          <span class="hero-label-text">AI-Powered Software Development</span>
+          <span class="hero-label-text">Software &amp; AI Studio</span>
         </div>
+        
         <h1 class="hero-headline">
           <span class="line"><span class="word">Your edge,</span></span>
           <span class="line"><span class="word"><span class="accent">engineered.</span></span></span>
         </h1>
+        
         <p class="hero-sub">
-          We build the software and AI systems that give your business an unfair advantage. 
-          From idea to launch in weeks, not months—with a team that actually picks up the phone.
+          We build the software and AI systems that give your business an unfair advantage. From idea to launch in weeks, not months—with a team that actually picks up the phone.
         </p>
+        
         <div class="hero-ctas">
           <a href="contact.html" class="btn btn-primary" data-magnetic>
             Book a free consultation
@@ -85,19 +100,20 @@
           </a>
         </div>
       </div>
+      
       <div class="scroll-cue">
         <div class="scroll-line"></div>
         <span class="scroll-text">Scroll</span>
       </div>
     </section>
 
-    <!-- Why GEE33 Section -->
     <section class="section" id="why">
       <div class="container">
         <div class="reveal">
           <span class="section-label">Why GEE33</span>
           <h2 class="section-title">Tired of agencies that overpromise and underdeliver? So were we.</h2>
         </div>
+        
         <div class="why-grid">
           <div class="why-card reveal">
             <div class="why-icon">
@@ -109,6 +125,7 @@
             <h3 class="why-title">Weeks, Not Months</h3>
             <p class="why-desc">Most agencies take 6-12 months to deliver anything. We launch working software in 4-8 weeks. Your competitors won't know what hit them.</p>
           </div>
+          
           <div class="why-card reveal">
             <div class="why-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -118,25 +135,38 @@
             <h3 class="why-title">Fixed Price, No Surprises</h3>
             <p class="why-desc">We quote it, you approve it, we build it. No scope creep. No "discovery phases" that drain your budget. No surprise invoices.</p>
           </div>
+          
           <div class="why-card reveal">
             <div class="why-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
             <h3 class="why-title">You Talk to the Builders</h3>
-            <p class="why-desc">No account managers. No middlemen. No 15 layers of project managers. When you call, you speak directly to the people building your product.</p>
+            <p class="why-desc">No account managers. No middlemen. No 15-person agency overhead. When you call, you speak directly to the people building your product.</p>
           </div>
+        </div>
+        
+        <div class="reveal" style="margin-top: var(--space-xl); text-align: center;">
+          <a href="why-us.html" class="btn btn-outline">
+            Learn more about why us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Results Section -->
     <section class="section" id="results">
       <div class="container">
+        <div class="reveal">
+          <span class="section-label">Results</span>
+          <h2 class="section-title">Real outcomes for real businesses.</h2>
+        </div>
+        
         <div class="results-grid reveal">
           <div class="result">
             <div class="result-value" data-counter="40" data-suffix="+">0+</div>
@@ -155,32 +185,24 @@
             <div class="result-label">Projects Delivered</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Work Section -->
-    <section class="section" id="work">
-      <div class="container">
-        <div class="reveal">
-          <span class="section-label">Results</span>
-          <h2 class="section-title">Real outcomes for real businesses</h2>
-        </div>
-        <div class="work-list reveal">
-          <div class="work-item" data-cursor-hover>
+        
+        <div class="work-list reveal" style="margin-top: var(--space-2xl);">
+          <a href="results.html#media-agency" class="work-item">
             <span class="work-client">Media Agency</span>
-            <h3 class="work-outcome">Automated ad tracking that saved 20 hours/week</h3>
+            <span class="work-outcome">Automated ad tracking that saved 20 hours/week</span>
             <div class="work-meta">
-              <span class="work-tag">AI Automation</span>
+              <span class="work-tag">AI & Automation</span>
               <div class="work-arrow">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </div>
             </div>
-          </div>
-          <div class="work-item" data-cursor-hover>
+          </a>
+          
+          <a href="results.html#logistics" class="work-item">
             <span class="work-client">Logistics Company</span>
-            <h3 class="work-outcome">Real-time tracking system that cut disputes by 60%</h3>
+            <span class="work-outcome">Real-time tracking system that cut disputes by 60%</span>
             <div class="work-meta">
               <span class="work-tag">Custom Platform</span>
               <div class="work-arrow">
@@ -189,10 +211,11 @@
                 </svg>
               </div>
             </div>
-          </div>
-          <div class="work-item" data-cursor-hover>
+          </a>
+          
+          <a href="results.html#retail" class="work-item">
             <span class="work-client">Retail Brand</span>
-            <h3 class="work-outcome">E-commerce platform that doubled online sales in 3 months</h3>
+            <span class="work-outcome">E-commerce platform that doubled online sales in 3 months</span>
             <div class="work-meta">
               <span class="work-tag">E-commerce</span>
               <div class="work-arrow">
@@ -201,109 +224,130 @@
                 </svg>
               </div>
             </div>
-          </div>
-          <div class="work-item" data-cursor-hover>
+          </a>
+          
+          <a href="results.html#agriculture" class="work-item">
             <span class="work-client">Agricultural Supplier</span>
-            <h3 class="work-outcome">AI inventory system that reduced stockouts by 80%</h3>
+            <span class="work-outcome">AI inventory system that reduced stockouts by 80%</span>
             <div class="work-meta">
-              <span class="work-tag">AI Systems</span>
+              <span class="work-tag">AI & Automation</span>
               <div class="work-arrow">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </div>
             </div>
-          </div>
+          </a>
         </div>
-        <div class="reveal" style="margin-top: 3rem; text-align: center;">
-          <a href="results.html" class="btn btn-outline">View all case studies</a>
+        
+        <div class="reveal" style="margin-top: var(--space-xl); text-align: center;">
+          <a href="results.html" class="btn btn-outline">
+            View all case studies
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
     <section class="section" id="services">
       <div class="container">
         <div class="reveal">
           <span class="section-label">What We Do</span>
-          <h2 class="section-title">Software that works as hard as you do</h2>
+          <h2 class="section-title">Software that works as hard as you do.</h2>
         </div>
+        
         <div class="services-grid">
           <div class="service-card reveal">
             <span class="service-num">01</span>
             <h3 class="service-title">Custom Business Apps</h3>
             <p class="service-desc">Stop wrestling with spreadsheets and off-the-shelf software that doesn't fit. We build applications tailored exactly to how your business operates.</p>
           </div>
+          
           <div class="service-card reveal">
             <span class="service-num">02</span>
             <h3 class="service-title">AI & Automation</h3>
-            <p class="service-desc">Put repetitive tasks on autopilot. From intelligent document processing to predictive analytics, we make AI work for your bottom line.</p>
+            <p class="service-desc">Put repetitive tasks on autopilot. From intelligent document processing to predictive analytics to computer vision systems.</p>
           </div>
+          
           <div class="service-card reveal">
             <span class="service-num">03</span>
             <h3 class="service-title">E-commerce & Platforms</h3>
-            <p class="service-desc">Sell online without the limitations of template solutions. Custom storefronts, marketplaces, and booking systems that actually convert.</p>
+            <p class="service-desc">Sell online without the limitations of template solutions. Custom storefronts, marketplaces, and booking systems that convert.</p>
           </div>
         </div>
-        <div class="reveal" style="margin-top: 3rem; text-align: center;">
-          <a href="services.html" class="btn btn-outline">Explore all services</a>
+        
+        <div class="reveal" style="margin-top: var(--space-xl); text-align: center;">
+          <a href="services.html" class="btn btn-outline">
+            Explore all services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Process Section -->
     <section class="section" id="process">
       <div class="container">
         <div class="reveal">
-          <span class="section-label">How We Work</span>
-          <h2 class="section-title">Simple, transparent, no BS</h2>
+          <span class="section-label">How It Works</span>
+          <h2 class="section-title">From first call to launch—here's exactly what to expect.</h2>
         </div>
+        
         <div class="process-steps">
           <div class="process-step reveal">
             <div class="process-num">1</div>
             <h3 class="process-title">Discovery Call</h3>
-            <p class="process-desc">30 minutes to understand your challenge. You'll have a proposal within 48 hours—not 48 meetings.</p>
+            <p class="process-desc">30 minutes. We listen to your challenge, ask the right questions, and determine if we're the right fit. Proposal in 48 hours.</p>
           </div>
+          
           <div class="process-step reveal">
             <div class="process-num">2</div>
             <h3 class="process-title">Fixed Quote</h3>
-            <p class="process-desc">Clear scope, timeline, and price. You approve, we start. No hidden costs, no scope creep.</p>
+            <p class="process-desc">A clear scope document with exactly what we'll build, how long it will take, and what it will cost. One number.</p>
           </div>
+          
           <div class="process-step reveal">
             <div class="process-num">3</div>
             <h3 class="process-title">Weekly Updates</h3>
-            <p class="process-desc">Real demos, not slide decks. You see working software every week and can course-correct in real time.</p>
+            <p class="process-desc">Every week you'll see real progress—not slide decks. Working demos you can click through and test.</p>
           </div>
+          
           <div class="process-step reveal">
             <div class="process-num">4</div>
             <h3 class="process-title">Launch & Support</h3>
-            <p class="process-desc">We deploy, you go live. 30 days of support included. Your IP, fully owned.</p>
+            <p class="process-desc">We handle deployment, training, and handover. 30 days of support included. Your IP, fully owned.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="section contact" id="contact">
       <div class="container">
         <div class="contact-grid">
           <div class="reveal">
-            <h2 class="contact-headline">Ready to move <span class="accent">faster?</span></h2>
+            <h2 class="contact-headline">Ready to<br>move <span class="accent">faster?</span></h2>
             <p class="contact-sub">Book a free 30-minute call. No pitch, no pressure—just an honest conversation about whether we can help.</p>
           </div>
-          <form class="contact-form reveal" action="#" method="POST">
+          
+          <form class="contact-form reveal" id="contactForm">
             <div class="form-field">
               <label class="form-label" for="name">Your Name</label>
               <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required>
             </div>
+            
             <div class="form-field">
               <label class="form-label" for="email">Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com" required>
+              <input type="email" id="email" name="email" class="form-input" placeholder="john@company.co.za" required>
             </div>
+            
             <div class="form-field">
-              <label class="form-label" for="challenge">What challenge are you facing?</label>
-              <textarea id="challenge" name="challenge" class="form-input" placeholder="Tell us about your project or problem..."></textarea>
+              <label class="form-label" for="message">What challenge are you facing?</label>
+              <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project or the problem you're trying to solve..." required></textarea>
             </div>
+            
             <button type="submit" class="btn btn-primary form-submit">
               Request a call
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -314,11 +358,11 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <p class="footer-copy">© 2025 GEE33. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2025 GEE33. All rights reserved.</p>
     <div class="footer-links">
       <a href="mailto:hello@gee33.co.za" class="footer-link">hello@gee33.co.za</a>
       <a href="tel:+27123456789" class="footer-link">+27 12 345 6789</a>
