@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About GEE33 — Built by operators, for operators. A small, senior team delivering custom software and AI solutions in Johannesburg, South Africa.">
+  <title>About — GEE33</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@700,800,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .story-content {
+      font-size: 1.125rem;
+      color: var(--cream-60);
+      line-height: 1.9;
+    }
+    .story-content p {
+      margin-bottom: 1.5rem;
+    }
+    .story-content p:last-child {
+      margin-bottom: 0;
+    }
+    .story-content strong {
+      color: var(--cream);
+      font-weight: 600;
+    }
+    .story-visual {
+      position: relative;
+    }
+    .story-image {
+      aspect-ratio: 1;
+      background: var(--void-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-05);
+      position: relative;
+      overflow: hidden;
+    }
+    .story-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 50%, #06b6d4 100%);
+      opacity: 0.15;
+    }
+    .story-image-inner {
+      position: absolute;
+      inset: 15%;
+      border: 1px solid var(--cream-10);
+      border-radius: 50%;
+      animation: slowSpin 30s linear infinite;
+    }
+    .story-image-inner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+    @keyframes slowSpin {
+      to { transform: rotate(360deg); }
+    }
+    .story-image-center {
+      position: absolute;
+      inset: 30%;
+      background: var(--void);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--cream-05);
+    }
+    .story-image-logo {
+      width: 80px;
+      height: 80px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .value-card {
+      padding: 2rem;
+      background: var(--void-surface);
+      border: 1px solid var(--cream-05);
+      border-radius: var(--radius-lg);
+    }
+    .value-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .value-title svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+    }
+    .value-desc {
+      color: var(--cream-60);
+      line-height: 1.7;
+    }
+    .location-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .location-map {
+      aspect-ratio: 16/10;
+      background: var(--void-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .location-map::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f8f7f4' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .location-pin {
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 40px var(--accent-glow);
+    }
+    .location-pin::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transform: rotate(45deg);
+    }
+    .location-content h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .location-content p {
+      color: var(--cream-60);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .location-details {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .location-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .location-detail svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+    }
+    .location-detail span {
+      color: var(--cream-60);
+    }
+    @media (max-width: 900px) {
+      .story-section,
+      .location-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Background -->
+  <div class="bg-canvas">
+    <div class="gradient-orb orb-1" id="orb1"></div>
+    <div class="gradient-orb orb-2" id="orb2"></div>
+    <div class="gradient-orb orb-3" id="orb3"></div>
+  </div>
+  <div class="grain"></div>
+  <div class="grid-lines"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20c7.5 0 14.1-4.1 17.5-10.2" stroke="#4f46e5" stroke-width="3" stroke-linecap="round"/>
+        <path d="M24 14c-5.523 0-10 4.477-10 10s4.477 10 10 10" stroke="#f8f7f4" stroke-width="3" stroke-linecap="round"/>
+        <rect x="30" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+        <rect x="36" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+      </svg>
+      <span class="logo-wordmark">GEE<span class="accent">33</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="why-us.html" class="nav-link">Why Us</a>
+      <a href="results.html" class="nav-link">Results</a>
+      <a href="services.html" class="nav-link">What We Do</a>
+      <a href="about.html" class="nav-link" style="color: var(--cream);">About</a>
+      <a href="contact.html" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Page Hero -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="hero-content">
+        <div class="hero-label">
+          <span class="hero-label-dot"></span>
+          <span class="hero-label-text">About Us</span>
+        </div>
+        <h1 class="hero-headline">
+          <span class="line"><span class="word">Built by</span></span>
+          <span class="line"><span class="word"><span class="accent">operators,</span></span></span>
+          <span class="line"><span class="word">for operators.</span></span>
+        </h1>
+        <p class="hero-sub">
+          We've been burned by agencies too. So we built a different kind of company.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="section">
+      <div class="container">
+        <div class="story-section reveal">
+          <div class="story-content">
+            <p>
+              <strong>We know what it's like to be on your side of the table.</strong>
+            </p>
+            <p>
+              Before GEE33, we were the ones hiring agencies. We sat through the endless "discovery sessions." We watched budgets balloon. We waited months for products that didn't work.
+            </p>
+            <p>
+              Missed deadlines. Blown budgets. Account managers who couldn't answer a single technical question. Developers who'd never actually run a business.
+            </p>
+            <p>
+              We knew there had to be a better way.
+            </p>
+            <p>
+              <strong>So we built it.</strong> A small, senior team. No middlemen. No BS. Just people who've been in the trenches—building products, running operations, growing businesses—now building software that actually ships.
+            </p>
+            <p>
+              We're not a 200-person shop with 15 layers of project managers. We're a tight crew of builders who care about your outcome as much as you do.
+            </p>
+            <p>
+              <strong>A decade of experience building products that actually ship.</strong> That's what we bring to the table.
+            </p>
+          </div>
+          <div class="story-visual">
+            <div class="story-image">
+              <div class="story-image-inner"></div>
+              <div class="story-image-center">
+                <svg class="story-image-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20c7.5 0 14.1-4.1 17.5-10.2" stroke="#4f46e5" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M24 14c-5.523 0-10 4.477-10 10s4.477 10 10 10" stroke="#f8f7f4" stroke-width="3" stroke-linecap="round"/>
+                  <rect x="30" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+                  <rect x="36" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section" style="background: var(--void-up); border-top: 1px solid var(--cream-05); border-bottom: 1px solid var(--cream-05);">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">What We Believe</span>
+          <h2 class="section-title">Principles that guide everything we do</h2>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <h3 class="value-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Ship Fast, Ship Often
+            </h3>
+            <p class="value-desc">Perfect is the enemy of done. We believe in getting working software in your hands quickly, then iterating based on real feedback—not months of theoretical planning.</p>
+          </div>
+          <div class="value-card reveal">
+            <h3 class="value-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              Radical Transparency
+            </h3>
+            <p class="value-desc">No hidden fees. No scope creep surprises. No "strategic ambiguity." We tell you exactly what you're getting, what it costs, and when you'll have it.</p>
+          </div>
+          <div class="value-card reveal">
+            <h3 class="value-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              Skin in the Game
+            </h3>
+            <p class="value-desc">We're not just building for you—we're invested in your success. When you win, we win. That's why we take on projects where we can actually make a difference.</p>
+          </div>
+          <div class="value-card reveal">
+            <h3 class="value-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              Craft Over Volume
+            </h3>
+            <p class="value-desc">We don't churn out cookie-cutter solutions. Every project gets our full attention because we only take on work we can be proud of.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section">
+      <div class="container">
+        <div class="location-section reveal">
+          <div class="location-map">
+            <div class="location-pin"></div>
+          </div>
+          <div class="location-content">
+            <span class="section-label">Based in South Africa</span>
+            <h3>Proudly building from Johannesburg</h3>
+            <p>
+              We're a South African company serving clients across the continent and beyond. We understand local market dynamics, compliance requirements (POPIA), and payment integrations—because we live them too.
+            </p>
+            <p>
+              Our timezone (SAST) means we overlap with both European and Asian business hours, making collaboration seamless no matter where you're based.
+            </p>
+            <div class="location-details">
+              <div class="location-detail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Johannesburg, South Africa</span>
+              </div>
+              <div class="location-detail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <span>SAST (GMT+2)</span>
+              </div>
+              <div class="location-detail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>+27 12 345 6789</span>
+              </div>
+              <div class="location-detail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span>hello@gee33.co.za</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="results-grid reveal">
+          <div class="result">
+            <div class="result-value">10+</div>
+            <div class="result-label">Years of Experience</div>
+          </div>
+          <div class="result">
+            <div class="result-value" data-counter="40" data-suffix="+">0+</div>
+            <div class="result-label">Products Shipped</div>
+          </div>
+          <div class="result">
+            <div class="result-value">0</div>
+            <div class="result-label">Missed Deadlines</div>
+          </div>
+          <div class="result">
+            <div class="result-value">100%</div>
+            <div class="result-label">Client Ownership</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <h2 class="contact-headline">Ready to work with a team that <span class="accent">gets it?</span></h2>
+            <p class="contact-sub">Let's talk about what you're building. No pitch, no pressure—just a conversation between operators.</p>
+          </div>
+          <div class="reveal" style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
+            <a href="contact.html" class="btn btn-primary" style="justify-content: center;">
+              Book your free call
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="results.html" class="btn btn-outline" style="justify-content: center;">
+              See our work
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-copy">© 2025 GEE33. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:hello@gee33.co.za" class="footer-link">hello@gee33.co.za</a>
+      <a href="tel:+27123456789" class="footer-link">+27 12 345 6789</a>
+      <a href="https://linkedin.com/company/gee33" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

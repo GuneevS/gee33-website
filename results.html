@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="See real results from GEE33 clients. Case studies showcasing custom software, AI automation, and e-commerce solutions that drive business growth.">
+  <title>Results — GEE33</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@700,800,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .case-study {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--cream-05);
+      align-items: center;
+    }
+    .case-study:nth-child(even) {
+      direction: rtl;
+    }
+    .case-study:nth-child(even) > * {
+      direction: ltr;
+    }
+    .case-study:last-child {
+      border-bottom: none;
+    }
+    .case-visual {
+      aspect-ratio: 4/3;
+      background: var(--void-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
+      opacity: 0.1;
+    }
+    .case-icon {
+      width: 80px;
+      height: 80px;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+    }
+    .case-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .case-industry {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    .case-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .case-desc {
+      color: var(--cream-60);
+      line-height: 1.8;
+      font-size: 1.0625rem;
+    }
+    .case-results {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .case-result {
+      padding: 1.25rem;
+      background: var(--void-surface);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--cream-05);
+    }
+    .case-result-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .case-result-label {
+      font-size: 0.875rem;
+      color: var(--cream-40);
+      margin-top: 0.25rem;
+    }
+    .case-tags {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .case-tag {
+      font-size: 0.8125rem;
+      color: var(--cream-40);
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--cream-10);
+      border-radius: var(--radius-full);
+    }
+    @media (max-width: 900px) {
+      .case-study {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .case-study:nth-child(even) {
+        direction: ltr;
+      }
+      .case-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Background -->
+  <div class="bg-canvas">
+    <div class="gradient-orb orb-1" id="orb1"></div>
+    <div class="gradient-orb orb-2" id="orb2"></div>
+    <div class="gradient-orb orb-3" id="orb3"></div>
+  </div>
+  <div class="grain"></div>
+  <div class="grid-lines"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20c7.5 0 14.1-4.1 17.5-10.2" stroke="#4f46e5" stroke-width="3" stroke-linecap="round"/>
+        <path d="M24 14c-5.523 0-10 4.477-10 10s4.477 10 10 10" stroke="#f8f7f4" stroke-width="3" stroke-linecap="round"/>
+        <rect x="30" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+        <rect x="36" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+      </svg>
+      <span class="logo-wordmark">GEE<span class="accent">33</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="why-us.html" class="nav-link">Why Us</a>
+      <a href="results.html" class="nav-link" style="color: var(--cream);">Results</a>
+      <a href="services.html" class="nav-link">What We Do</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Page Hero -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="hero-content">
+        <div class="hero-label">
+          <span class="hero-label-dot"></span>
+          <span class="hero-label-text">Case Studies</span>
+        </div>
+        <h1 class="hero-headline">
+          <span class="line"><span class="word">Real results.</span></span>
+          <span class="line"><span class="word">Real <span class="accent">businesses.</span></span></span>
+        </h1>
+        <p class="hero-sub">
+          We measure success by one thing: the impact on your business. Here's what we've delivered for clients just like you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Results Stats -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="results-grid reveal">
+          <div class="result">
+            <div class="result-value" data-counter="40" data-suffix="+">0+</div>
+            <div class="result-label">Products Launched</div>
+          </div>
+          <div class="result">
+            <div class="result-value">4-8</div>
+            <div class="result-label">Weeks to Launch</div>
+          </div>
+          <div class="result">
+            <div class="result-value">R2M+</div>
+            <div class="result-label">Client Revenue Enabled</div>
+          </div>
+          <div class="result">
+            <div class="result-value">100%</div>
+            <div class="result-label">Projects Delivered</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="section">
+      <div class="container">
+        <!-- Case Study 1 -->
+        <div class="case-study reveal">
+          <div class="case-visual">
+            <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div class="case-content">
+            <span class="case-industry">Media & Advertising</span>
+            <h2 class="case-title">Automated ad tracking that saved 20 hours per week</h2>
+            <p class="case-desc">
+              A leading media agency was drowning in manual ad tracking across TV, radio, and digital. Their team spent entire days verifying ad placements and reconciling reports. We built an AI-powered monitoring system that automatically detects, logs, and verifies ad airings in real-time.
+            </p>
+            <div class="case-results">
+              <div class="case-result">
+                <div class="case-result-value">20hrs</div>
+                <div class="case-result-label">saved per week</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">98%</div>
+                <div class="case-result-label">detection accuracy</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">6 weeks</div>
+                <div class="case-result-label">to launch</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">3x</div>
+                <div class="case-result-label">more campaigns handled</div>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">AI Detection</span>
+              <span class="case-tag">Automation</span>
+              <span class="case-tag">Dashboard</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="case-study reveal">
+          <div class="case-visual">
+            <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/>
+              <line x1="8" y1="2" x2="8" y2="18"/>
+              <line x1="16" y1="6" x2="16" y2="22"/>
+            </svg>
+          </div>
+          <div class="case-content">
+            <span class="case-industry">Logistics & Distribution</span>
+            <h2 class="case-title">Real-time tracking system that cut disputes by 60%</h2>
+            <p class="case-desc">
+              A national logistics company was losing money to delivery disputes—customers claiming packages weren't delivered, drivers claiming they were. We built a real-time tracking platform with photo proof-of-delivery, GPS verification, and automated customer notifications.
+            </p>
+            <div class="case-results">
+              <div class="case-result">
+                <div class="case-result-value">60%</div>
+                <div class="case-result-label">fewer disputes</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">R400K+</div>
+                <div class="case-result-label">saved annually</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">5 weeks</div>
+                <div class="case-result-label">to launch</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">4.8★</div>
+                <div class="case-result-label">customer rating</div>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">Real-time Tracking</span>
+              <span class="case-tag">Mobile App</span>
+              <span class="case-tag">Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="case-study reveal">
+          <div class="case-visual">
+            <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <div class="case-content">
+            <span class="case-industry">Retail & E-commerce</span>
+            <h2 class="case-title">E-commerce platform that doubled online sales in 3 months</h2>
+            <p class="case-desc">
+              A growing retail brand was stuck on a template e-commerce platform that couldn't handle their complex inventory and pricing needs. We built a custom storefront with smart search, personalized recommendations, and seamless integration with their existing systems.
+            </p>
+            <div class="case-results">
+              <div class="case-result">
+                <div class="case-result-value">2x</div>
+                <div class="case-result-label">online sales</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">45%</div>
+                <div class="case-result-label">higher conversion</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">7 weeks</div>
+                <div class="case-result-label">to launch</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">-30%</div>
+                <div class="case-result-label">cart abandonment</div>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">E-commerce</span>
+              <span class="case-tag">Custom Platform</span>
+              <span class="case-tag">AI Search</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 4 -->
+        <div class="case-study reveal">
+          <div class="case-visual">
+            <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="case-content">
+            <span class="case-industry">Agriculture & Supply Chain</span>
+            <h2 class="case-title">AI inventory system that reduced stockouts by 80%</h2>
+            <p class="case-desc">
+              A major agricultural supplier was constantly running out of critical products at the worst times—during planting season. We built a predictive inventory system that uses weather data, historical sales, and market signals to forecast demand and automate reordering.
+            </p>
+            <div class="case-results">
+              <div class="case-result">
+                <div class="case-result-value">80%</div>
+                <div class="case-result-label">fewer stockouts</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">R1.2M</div>
+                <div class="case-result-label">recovered revenue</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">8 weeks</div>
+                <div class="case-result-label">to launch</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">15%</div>
+                <div class="case-result-label">less inventory cost</div>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">AI Forecasting</span>
+              <span class="case-tag">Inventory</span>
+              <span class="case-tag">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 5 -->
+        <div class="case-study reveal">
+          <div class="case-visual">
+            <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <div class="case-content">
+            <span class="case-industry">Professional Services</span>
+            <h2 class="case-title">Document automation that processed 500+ contracts monthly</h2>
+            <p class="case-desc">
+              A legal services firm was drowning in contract review—a single contract could take hours to process manually. We built an AI-powered document system that extracts key terms, flags risks, and generates summaries automatically, letting their lawyers focus on strategy instead of paperwork.
+            </p>
+            <div class="case-results">
+              <div class="case-result">
+                <div class="case-result-value">500+</div>
+                <div class="case-result-label">contracts/month</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">85%</div>
+                <div class="case-result-label">time saved</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">6 weeks</div>
+                <div class="case-result-label">to launch</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">99.2%</div>
+                <div class="case-result-label">accuracy rate</div>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">AI Document Processing</span>
+              <span class="case-tag">Legal Tech</span>
+              <span class="case-tag">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 6 -->
+        <div class="case-study reveal">
+          <div class="case-visual">
+            <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="case-content">
+            <span class="case-industry">Education</span>
+            <h2 class="case-title">School management system serving 5,000+ students</h2>
+            <p class="case-desc">
+              A group of independent schools needed a unified system that actually worked for South African education—CAPS curriculum support, local payment integration, and parent communication. We built a comprehensive platform that handles everything from admissions to report cards.
+            </p>
+            <div class="case-results">
+              <div class="case-result">
+                <div class="case-result-value">5,000+</div>
+                <div class="case-result-label">students managed</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">40%</div>
+                <div class="case-result-label">admin time saved</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">8 weeks</div>
+                <div class="case-result-label">to launch</div>
+              </div>
+              <div class="case-result">
+                <div class="case-result-value">12</div>
+                <div class="case-result-label">schools onboarded</div>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">EdTech</span>
+              <span class="case-tag">Custom Platform</span>
+              <span class="case-tag">CAPS Compliant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <h2 class="contact-headline">Your success story <span class="accent">starts here</span></h2>
+            <p class="contact-sub">Let's talk about what we can build for you. Every project starts with a simple conversation.</p>
+          </div>
+          <div class="reveal" style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
+            <a href="contact.html" class="btn btn-primary" style="justify-content: center;">
+              Book your free call
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="services.html" class="btn btn-outline" style="justify-content: center;">
+              Explore our services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-copy">© 2025 GEE33. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:hello@gee33.co.za" class="footer-link">hello@gee33.co.za</a>
+      <a href="tel:+27123456789" class="footer-link">+27 12 345 6789</a>
+      <a href="https://linkedin.com/company/gee33" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

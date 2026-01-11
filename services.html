@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GEE33 services: Custom business applications, AI & automation, e-commerce platforms, and data solutions. Software that works as hard as you do.">
+  <title>What We Do — GEE33</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@700,800,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--cream-05);
+      align-items: center;
+    }
+    .service-detail:nth-child(even) {
+      direction: rtl;
+    }
+    .service-detail:nth-child(even) > * {
+      direction: ltr;
+    }
+    .service-detail:last-child {
+      border-bottom: none;
+    }
+    .service-visual {
+      background: var(--void-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-05);
+      padding: 3rem;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .service-visual-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--accent);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .service-visual-icon svg {
+      width: 32px;
+      height: 32px;
+      color: white;
+    }
+    .service-visual-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .service-visual-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--void);
+      border-radius: var(--radius-sm);
+      font-size: 0.9375rem;
+      color: var(--cream-60);
+    }
+    .service-visual-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .service-content .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    .service-content .service-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .service-content .service-desc {
+      color: var(--cream-60);
+      line-height: 1.8;
+      font-size: 1.0625rem;
+    }
+    .service-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .service-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 1rem;
+    }
+    .service-benefit svg {
+      width: 20px;
+      height: 20px;
+      color: #22c55e;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .tech-stack {
+      margin-top: 5rem;
+      padding: 4rem 0;
+      border-top: 1px solid var(--cream-05);
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.5rem;
+      background: var(--void-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--cream-05);
+      transition: all 0.3s ease;
+    }
+    .tech-item:hover {
+      border-color: var(--cream-10);
+      transform: translateY(-4px);
+    }
+    .tech-item svg {
+      width: 40px;
+      height: 40px;
+      color: var(--cream-60);
+    }
+    .tech-item span {
+      font-size: 0.8125rem;
+      color: var(--cream-40);
+    }
+    @media (max-width: 1024px) {
+      .tech-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (max-width: 900px) {
+      .service-detail {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .service-detail:nth-child(even) {
+        direction: ltr;
+      }
+      .service-content .service-title {
+        font-size: 1.75rem;
+      }
+      .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Background -->
+  <div class="bg-canvas">
+    <div class="gradient-orb orb-1" id="orb1"></div>
+    <div class="gradient-orb orb-2" id="orb2"></div>
+    <div class="gradient-orb orb-3" id="orb3"></div>
+  </div>
+  <div class="grain"></div>
+  <div class="grid-lines"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20c7.5 0 14.1-4.1 17.5-10.2" stroke="#4f46e5" stroke-width="3" stroke-linecap="round"/>
+        <path d="M24 14c-5.523 0-10 4.477-10 10s4.477 10 10 10" stroke="#f8f7f4" stroke-width="3" stroke-linecap="round"/>
+        <rect x="30" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+        <rect x="36" y="8" width="3" height="14" rx="1.5" fill="#f8f7f4"/>
+      </svg>
+      <span class="logo-wordmark">GEE<span class="accent">33</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="why-us.html" class="nav-link">Why Us</a>
+      <a href="results.html" class="nav-link">Results</a>
+      <a href="services.html" class="nav-link" style="color: var(--cream);">What We Do</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Page Hero -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="hero-content">
+        <div class="hero-label">
+          <span class="hero-label-dot"></span>
+          <span class="hero-label-text">What We Do</span>
+        </div>
+        <h1 class="hero-headline">
+          <span class="line"><span class="word">Software that</span></span>
+          <span class="line"><span class="word">works as hard <span class="accent">as you.</span></span></span>
+        </h1>
+        <p class="hero-sub">
+          From custom applications to AI automation, we build the tools that give your business an unfair advantage.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="section">
+      <div class="container">
+        <!-- Service 1: Custom Business Apps -->
+        <div class="service-detail reveal">
+          <div class="service-content">
+            <span class="service-num">01 — Custom Business Apps</span>
+            <h2 class="service-title">Stop wrestling with software that doesn't fit</h2>
+            <p class="service-desc">
+              Off-the-shelf tools force you to change how you work. We build applications tailored exactly to your processes—so you get software that adapts to your business, not the other way around.
+            </p>
+            <div class="service-benefits">
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Built around your actual workflow, not generic templates</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Integrates with the tools you already use</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Scales with your business—no starting over</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>100% owned by you—no vendor lock-in</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-visual">
+            <div class="service-visual-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="service-visual-list">
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Internal tools & dashboards
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                CRM & customer management
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Workflow automation systems
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Reporting & analytics platforms
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: AI & Automation -->
+        <div class="service-detail reveal">
+          <div class="service-content">
+            <span class="service-num">02 — AI & Automation</span>
+            <h2 class="service-title">Put repetitive tasks on autopilot</h2>
+            <p class="service-desc">
+              Your team shouldn't spend hours on tasks a machine can do in seconds. We implement AI and automation that handles the busywork—so your people can focus on what actually moves the needle.
+            </p>
+            <div class="service-benefits">
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Intelligent document processing & extraction</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Predictive analytics for smarter decisions</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Chatbots & customer service automation</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Custom AI models trained on your data</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-visual">
+            <div class="service-visual-icon" style="background: #7c3aed;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
+                <circle cx="7.5" cy="14.5" r="1.5"/>
+                <circle cx="16.5" cy="14.5" r="1.5"/>
+              </svg>
+            </div>
+            <div class="service-visual-list">
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Invoice & receipt processing
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Demand forecasting
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Automated customer support
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Content & media analysis
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: E-commerce & Platforms -->
+        <div class="service-detail reveal">
+          <div class="service-content">
+            <span class="service-num">03 — E-commerce & Platforms</span>
+            <h2 class="service-title">Sell online without limitations</h2>
+            <p class="service-desc">
+              Template e-commerce platforms look the same, perform the same, and limit your growth. We build custom storefronts and marketplaces that actually convert—designed for how your customers want to buy.
+            </p>
+            <div class="service-benefits">
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Custom storefronts that stand out</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Multi-vendor marketplaces</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Local payment gateway integration (SA)</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Booking & subscription systems</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-visual">
+            <div class="service-visual-icon" style="background: #06b6d4;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+            </div>
+            <div class="service-visual-list">
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom online stores
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                B2B ordering portals
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Membership platforms
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Service booking systems
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Data & Analytics -->
+        <div class="service-detail reveal">
+          <div class="service-content">
+            <span class="service-num">04 — Data & Analytics</span>
+            <h2 class="service-title">Turn data into decisions</h2>
+            <p class="service-desc">
+              You're sitting on a goldmine of data—but if you can't see it, you can't use it. We build dashboards and analytics systems that give you real-time visibility into what's actually happening in your business.
+            </p>
+            <div class="service-benefits">
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Real-time business dashboards</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Data pipeline & warehouse setup</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Automated reporting systems</span>
+              </div>
+              <div class="service-benefit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Integration across all your data sources</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-visual">
+            <div class="service-visual-icon" style="background: #f59e0b;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <div class="service-visual-list">
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Executive dashboards
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Sales & revenue analytics
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Operational metrics
+              </div>
+              <div class="service-visual-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Customer insights
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section" style="background: var(--void-up); border-top: 1px solid var(--cream-05);">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">How We Work</span>
+          <h2 class="section-title">Simple, transparent, no BS</h2>
+        </div>
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <div class="process-num">1</div>
+            <h3 class="process-title">Discovery Call</h3>
+            <p class="process-desc">30 minutes to understand your challenge. You'll have a proposal within 48 hours—not 48 meetings.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">2</div>
+            <h3 class="process-title">Fixed Quote</h3>
+            <p class="process-desc">Clear scope, timeline, and price. You approve, we start. No hidden costs, no scope creep.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">3</div>
+            <h3 class="process-title">Weekly Updates</h3>
+            <p class="process-desc">Real demos, not slide decks. You see working software every week and can course-correct in real time.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">4</div>
+            <h3 class="process-title">Launch & Support</h3>
+            <p class="process-desc">We deploy, you go live. 30 days of support included. Your IP, fully owned.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <h2 class="contact-headline">Not sure what you <span class="accent">need?</span></h2>
+            <p class="contact-sub">That's okay. Let's talk through your challenge and figure out the right solution together. No pressure, no pitch—just an honest conversation.</p>
+          </div>
+          <div class="reveal" style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
+            <a href="contact.html" class="btn btn-primary" style="justify-content: center;">
+              Book your free call
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="results.html" class="btn btn-outline" style="justify-content: center;">
+              See our results
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-copy">© 2025 GEE33. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:hello@gee33.co.za" class="footer-link">hello@gee33.co.za</a>
+      <a href="tel:+27123456789" class="footer-link">+27 12 345 6789</a>
+      <a href="https://linkedin.com/company/gee33" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
