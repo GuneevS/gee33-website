@@ -203,12 +203,72 @@
   };
 
   // ============================================================================
-  // FORM HANDLING
+  // WHATSAPP FORM HANDLING
   // ============================================================================
   const initForms = () => {
-    const forms = document.querySelectorAll('form');
+    const contactForm = document.getElementById('contactForm');
     
-    forms.forEach(form => {
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Collect form data
+        const name = document.getElementById('name')?.value || '';
+        const email = document.getElementById('email')?.value || '';
+        const company = document.getElementById('company')?.value || '';
+        const phone = document.getElementById('phone')?.value || '';
+        const message = document.getElementById('message')?.value || '';
+        
+        // Validate required fields
+        if (!name || !email || !message) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        
+        // Construct WhatsApp message
+        const whatsappMessage = `🚀 *New Project Enquiry*
+
+*Name:* ${name}
+*Email:* ${email}
+${company ? `*Company:* ${company}\n` : ''}${phone ? `*Phone:* ${phone}\n` : ''}
+*Message:*
+${message}`;
+        
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        
+        // WhatsApp number (South Africa format)
+        const whatsappNumber = '27686222111';
+        
+        // Create WhatsApp URL
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappURL, '_blank');
+        
+        // Show success feedback
+        const submitBtn = contactForm.querySelector('[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Opening WhatsApp...
+        `;
+        
+        // Reset form and button
+        setTimeout(() => {
+          contactForm.reset();
+          submitBtn.innerHTML = originalText;
+        }, 2000);
+      });
+    }
+    
+    // Handle any other forms (non-WhatsApp)
+    const otherForms = document.querySelectorAll('form:not(#contactForm)');
+    
+    otherForms.forEach(form => {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         

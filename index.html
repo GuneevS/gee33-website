@@ -3,35 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GEE33 - Custom software and AI systems that give your business an unfair advantage. From idea to launch in weeks, not months.">
-  <meta name="keywords" content="custom software, AI development, business automation, South Africa, app development">
+  <meta name="description" content="South Africa's rapid software development studio. Custom applications, AI integration, and business automation — delivered fast and affordably. Based in Bryanston, Johannesburg.">
+  <meta name="keywords" content="custom software development South Africa, AI development Johannesburg, rapid application development, business automation, Bryanston software company, affordable software development">
   <meta name="author" content="GEE33">
   
-  <meta property="og:title" content="GEE33 | Your Edge, Engineered">
-  <meta property="og:description" content="Custom software and AI systems that give your business an unfair advantage.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="GEE33 | Custom Software & AI Development | Johannesburg, South Africa">
+  <meta property="og:description" content="South Africa's rapid development studio. We build custom software and AI systems in weeks, not months — at a fraction of traditional agency costs.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gee33.co.za">
+  <meta property="og:image" content="https://gee33.co.za/assets/og-image.png">
   
-  <title>GEE33 | Your Edge, Engineered</title>
+  <title>GEE33 | Custom Software & AI Development | Johannesburg, South Africa</title>
   
+  <!-- Fonts - Space Grotesk + Geist -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/style.css">
   
+  <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   
-  <style>
-    :root {
-      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-  </style>
+  <!-- Structured Data for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareCompany",
+    "name": "GEE33",
+    "description": "Custom software development and AI integration services in Johannesburg, South Africa",
+    "url": "https://gee33.co.za",
+    "telephone": "+27686222111",
+    "email": "hello@gee33.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bryanston",
+      "addressRegion": "Gauteng",
+      "addressCountry": "ZA"
+    },
+    "areaServed": "South Africa",
+    "priceRange": "$$"
+  }
+  </script>
 </head>
 <body>
+  <!-- Custom Cursor -->
   <div class="cursor-ring" id="cursorRing"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
+  <!-- Background Effects -->
   <div class="bg-canvas">
     <div class="gradient-orb orb-1" id="orb1"></div>
     <div class="gradient-orb orb-2" id="orb2"></div>
@@ -40,64 +64,87 @@
   <div class="grain"></div>
   <div class="grid-lines"></div>
 
+  <!-- Navigation -->
   <nav class="nav" id="nav">
-    <a href="index.html" class="logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 4C11.164 4 4 11.164 4 20s7.164 16 16 16c6.5 0 12.2-3.9 14.7-9.5" stroke="#f8f7f4" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M20 12v8h8" stroke="#f8f7f4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <rect x="28" y="6" width="8" height="2.5" rx="1.25" fill="#4f46e5"/>
-        <rect x="28" y="11" width="8" height="2.5" rx="1.25" fill="#4f46e5"/>
-        <rect x="28" y="16" width="8" height="2.5" rx="1.25" fill="#4f46e5"/>
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- G shape - bold geometric -->
+        <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18c6.627 0 12.452-3.58 15.588-8.912" stroke="url(#logo-gradient)" stroke-width="3.5" stroke-linecap="round" class="logo-path"/>
+        <path d="M24 15c-4.97 0-9 4.03-9 9s4.03 9 9 9" stroke="#f5f5f5" stroke-width="3" stroke-linecap="round" class="logo-path"/>
+        <!-- 33 bars - representing speed/progress -->
+        <rect x="32" y="10" width="3" height="12" rx="1.5" fill="#f5f5f5" class="logo-bar"/>
+        <rect x="38" y="10" width="3" height="12" rx="1.5" fill="url(#logo-gradient)" class="logo-bar"/>
+        <defs>
+          <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
       </svg>
       <span class="logo-wordmark">GEE<span class="accent">33</span></span>
     </a>
     
     <div class="nav-links">
-      <a href="why-us.html" class="nav-link">Why Us</a>
-      <a href="results.html" class="nav-link">Results</a>
-      <a href="services.html" class="nav-link">What We Do</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="btn nav-cta">Book a Call</a>
+      <a href="#products" class="nav-link">Our Work</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#directors" class="nav-link">Team</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="nav-cta">Start a Project</a>
     </div>
     
-    <button class="nav-toggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
 
+  <!-- Main Content -->
   <main class="main">
     
+    <!-- Hero Section -->
     <section class="hero" id="hero">
       <div class="hero-content">
         <div class="hero-label">
           <span class="hero-label-dot"></span>
-          <span class="hero-label-text">Software &amp; AI Studio</span>
+          <span class="hero-label-text">Rapid Software Development Studio</span>
         </div>
         
         <h1 class="hero-headline">
-          <span class="line"><span class="word">Your edge,</span></span>
-          <span class="line"><span class="word"><span class="accent">engineered.</span></span></span>
+          <span class="line"><span class="word" data-delay="0">Ship faster.</span></span>
+          <span class="line"><span class="word" data-delay="1">Spend less.</span></span>
+          <span class="line"><span class="word" data-delay="2"><span class="accent">Build smarter.</span></span></span>
         </h1>
         
         <p class="hero-sub">
-          We build the software and AI systems that give your business an unfair advantage. From idea to launch in weeks, not months—with a team that actually picks up the phone.
+          South Africa's rapid development studio. We build custom software and AI systems 
+          in weeks, not months — at a fraction of traditional agency costs.
         </p>
         
         <div class="hero-ctas">
-          <a href="contact.html" class="btn btn-primary" data-magnetic>
-            Book a free consultation
+          <a href="#contact" class="btn btn-primary" data-magnetic>
+            Start your project
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="results.html" class="btn btn-ghost">
-            See our work
+          <a href="#products" class="btn btn-ghost">
+            See what we've built
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
+        </div>
+        
+        <div class="hero-badges">
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bryanston, Johannesburg
+          </span>
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            068 622 2111
+          </span>
         </div>
       </div>
       
@@ -107,36 +154,57 @@
       </div>
     </section>
 
+    <!-- Why GEE33 Section -->
     <section class="section" id="why">
       <div class="container">
         <div class="reveal">
           <span class="section-label">Why GEE33</span>
-          <h2 class="section-title">Tired of agencies that overpromise and underdeliver? So were we.</h2>
+          <h2 class="section-title">
+            Skip the bloated agency experience.<br>
+            <span style="color: var(--cream-40);">Work directly with the builders.</span>
+          </h2>
         </div>
         
         <div class="why-grid">
-          <div class="why-card reveal">
+          <div class="why-card reveal" data-reveal-child>
             <div class="why-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
               </svg>
             </div>
-            <h3 class="why-title">Weeks, Not Months</h3>
-            <p class="why-desc">Most agencies take 6-12 months to deliver anything. We launch working software in 4-8 weeks. Your competitors won't know what hit them.</p>
+            <h3 class="why-title">Rapid Delivery</h3>
+            <p class="why-desc">
+              Traditional agencies drag projects out for months. We're built for speed — lean teams, modern tooling, and AI-assisted development that gets you to market while your competitors are still in "discovery."
+            </p>
           </div>
           
-          <div class="why-card reveal">
+          <div class="why-card reveal" data-reveal-child>
             <div class="why-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
               </svg>
             </div>
-            <h3 class="why-title">Fixed Price, No Surprises</h3>
-            <p class="why-desc">We quote it, you approve it, we build it. No scope creep. No "discovery phases" that drain your budget. No surprise invoices.</p>
+            <h3 class="why-title">Affordable Excellence</h3>
+            <p class="why-desc">
+              Enterprise-quality software without the enterprise price tag. Our efficient processes and South African base mean you get world-class development at a fraction of what US or EU agencies charge.
+            </p>
           </div>
           
-          <div class="why-card reveal">
+          <div class="why-card reveal" data-reveal-child>
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
+                <circle cx="7.5" cy="14.5" r="1.5"/>
+                <circle cx="16.5" cy="14.5" r="1.5"/>
+              </svg>
+            </div>
+            <h3 class="why-title">AI-Native Approach</h3>
+            <p class="why-desc">
+              We don't just build software — we build intelligent systems. Machine learning, automation, and AI integration are core to how we work, not afterthoughts bolted on at the end.
+            </p>
+          </div>
+          
+          <div class="why-card reveal" data-reveal-child>
             <div class="why-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -144,216 +212,385 @@
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <h3 class="why-title">You Talk to the Builders</h3>
-            <p class="why-desc">No account managers. No middlemen. No 15-person agency overhead. When you call, you speak directly to the people building your product.</p>
+            <h3 class="why-title">Direct Access</h3>
+            <p class="why-desc">
+              No account managers. No project coordinators. No telephone game. You work directly with the engineers and designers building your product. Questions get answered in hours, not weeks.
+            </p>
           </div>
-        </div>
-        
-        <div class="reveal" style="margin-top: var(--space-xl); text-align: center;">
-          <a href="why-us.html" class="btn btn-outline">
-            Learn more about why us
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="results">
+    <!-- Products Section -->
+    <section class="section products-section" id="products">
       <div class="container">
         <div class="reveal">
-          <span class="section-label">Results</span>
-          <h2 class="section-title">Real outcomes for real businesses.</h2>
+          <span class="section-label">Our Products</span>
+          <h2 class="section-title">Software we've built. Problems we've solved.</h2>
+          <p class="section-desc">Real products powering real businesses across South Africa. From AI-powered media monitoring to school management systems.</p>
         </div>
         
-        <div class="results-grid reveal">
-          <div class="result">
-            <div class="result-value" data-counter="40" data-suffix="+">0+</div>
-            <div class="result-label">Products Launched</div>
-          </div>
-          <div class="result">
-            <div class="result-value">4-8</div>
-            <div class="result-label">Weeks to Launch</div>
-          </div>
-          <div class="result">
-            <div class="result-value">R2M+</div>
-            <div class="result-label">Client Revenue Enabled</div>
-          </div>
-          <div class="result">
-            <div class="result-value">100%</div>
-            <div class="result-label">Projects Delivered</div>
-          </div>
-        </div>
-        
-        <div class="work-list reveal" style="margin-top: var(--space-2xl);">
-          <a href="results.html#media-agency" class="work-item">
-            <span class="work-client">Media Agency</span>
-            <span class="work-outcome">Automated ad tracking that saved 20 hours/week</span>
-            <div class="work-meta">
-              <span class="work-tag">AI & Automation</span>
-              <div class="work-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+        <div class="products-grid reveal">
+          <!-- Audience360 -->
+          <div class="product-card" data-cursor-hover>
+            <div class="product-icon" style="background: linear-gradient(135deg, var(--accent), var(--violet));">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <h3 class="product-name">Audience360</h3>
+              <p class="product-tagline">AI-Powered Audience Measurement</p>
+              <p class="product-desc">
+                Privacy-first passive audio exposure measurement platform. Uses on-device audio fingerprinting to detect TV, radio, and streaming media consumption — without ever transmitting raw audio.
+              </p>
+              <div class="product-tags">
+                <span class="product-tag">Audio Fingerprinting</span>
+                <span class="product-tag">Machine Learning</span>
+                <span class="product-tag">Privacy-First</span>
               </div>
             </div>
-          </a>
+          </div>
           
-          <a href="results.html#logistics" class="work-item">
-            <span class="work-client">Logistics Company</span>
-            <span class="work-outcome">Real-time tracking system that cut disputes by 60%</span>
-            <div class="work-meta">
-              <span class="work-tag">Custom Platform</span>
-              <div class="work-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+          <!-- Media Monitoring Platform -->
+          <div class="product-card" data-cursor-hover>
+            <div class="product-icon" style="background: linear-gradient(135deg, #06b6d4, var(--accent));">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <h3 class="product-name">Broadcast Monitor</h3>
+              <p class="product-tagline">Autonomous Ad Detection</p>
+              <p class="product-desc">
+                AI-powered broadcast monitoring that automatically detects and logs advertisements across TV and radio in real-time. No manual verification needed — the system identifies ads autonomously using deep learning.
+              </p>
+              <div class="product-tags">
+                <span class="product-tag">AI Detection</span>
+                <span class="product-tag">Real-time</span>
+                <span class="product-tag">Multi-channel</span>
               </div>
             </div>
-          </a>
+          </div>
           
-          <a href="results.html#retail" class="work-item">
-            <span class="work-client">Retail Brand</span>
-            <span class="work-outcome">E-commerce platform that doubled online sales in 3 months</span>
-            <div class="work-meta">
-              <span class="work-tag">E-commerce</span>
-              <div class="work-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+          <!-- Schoolmatica -->
+          <div class="product-card" data-cursor-hover>
+            <div class="product-icon" style="background: linear-gradient(135deg, var(--emerald), #06b6d4);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <h3 class="product-name">Schoolmatica</h3>
+              <p class="product-tagline">Schools Management System</p>
+              <p class="product-desc">
+                Comprehensive school administration platform built for South African education. CAPS curriculum compliant with integrated student management, parent communication, attendance tracking, and grade reporting.
+              </p>
+              <div class="product-tags">
+                <span class="product-tag">EdTech</span>
+                <span class="product-tag">CAPS Compliant</span>
+                <span class="product-tag">Multi-school</span>
               </div>
             </div>
-          </a>
+          </div>
           
-          <a href="results.html#agriculture" class="work-item">
-            <span class="work-client">Agricultural Supplier</span>
-            <span class="work-outcome">AI inventory system that reduced stockouts by 80%</span>
-            <div class="work-meta">
-              <span class="work-tag">AI & Automation</span>
-              <div class="work-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+          <!-- MediaVault -->
+          <div class="product-card" data-cursor-hover>
+            <div class="product-icon" style="background: linear-gradient(135deg, var(--violet), #ec4899);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <path d="M22 6l-10 7L2 6"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <h3 class="product-name">MediaVault</h3>
+              <p class="product-tagline">Media Asset Management</p>
+              <p class="product-desc">
+                Centralized digital asset management for media companies. Intelligent tagging, advanced search, rights management, and seamless integration with broadcast workflows.
+              </p>
+              <div class="product-tags">
+                <span class="product-tag">DAM</span>
+                <span class="product-tag">AI Tagging</span>
+                <span class="product-tag">Broadcast</span>
               </div>
             </div>
-          </a>
-        </div>
-        
-        <div class="reveal" style="margin-top: var(--space-xl); text-align: center;">
-          <a href="results.html" class="btn btn-outline">
-            View all case studies
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+          </div>
+          
+          <!-- Documate -->
+          <div class="product-card" data-cursor-hover>
+            <div class="product-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="product-content">
+              <h3 class="product-name">Documate</h3>
+              <p class="product-tagline">PDF & Form Automation</p>
+              <p class="product-desc">
+                Intelligent document processing suite. Auto-fill forms from structured data, extract information from PDFs using AI, and automate document workflows that used to take hours.
+              </p>
+              <div class="product-tags">
+                <span class="product-tag">Document AI</span>
+                <span class="product-tag">Automation</span>
+                <span class="product-tag">OCR</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section class="section" id="services">
       <div class="container">
         <div class="reveal">
-          <span class="section-label">What We Do</span>
-          <h2 class="section-title">Software that works as hard as you do.</h2>
+          <span class="section-label">What We Build</span>
+          <h2 class="section-title">Custom software. AI integration. Business automation.</h2>
         </div>
         
         <div class="services-grid">
-          <div class="service-card reveal">
+          <div class="service-card reveal" data-reveal-child>
             <span class="service-num">01</span>
-            <h3 class="service-title">Custom Business Apps</h3>
-            <p class="service-desc">Stop wrestling with spreadsheets and off-the-shelf software that doesn't fit. We build applications tailored exactly to how your business operates.</p>
+            <h3 class="service-title">Custom Software Development</h3>
+            <p class="service-desc">
+              Bespoke applications built for your exact requirements. Internal tools, customer-facing platforms, mobile apps — whatever your business needs, engineered from scratch with modern tech stacks.
+            </p>
           </div>
           
-          <div class="service-card reveal">
+          <div class="service-card reveal" data-reveal-child>
             <span class="service-num">02</span>
-            <h3 class="service-title">AI & Automation</h3>
-            <p class="service-desc">Put repetitive tasks on autopilot. From intelligent document processing to predictive analytics to computer vision systems.</p>
+            <h3 class="service-title">AI Integration & Machine Learning</h3>
+            <p class="service-desc">
+              Make your software intelligent. Computer vision, natural language processing, predictive analytics, and automation that actually works. We integrate AI where it adds real value, not just buzzwords.
+            </p>
           </div>
           
-          <div class="service-card reveal">
+          <div class="service-card reveal" data-reveal-child>
             <span class="service-num">03</span>
-            <h3 class="service-title">E-commerce & Platforms</h3>
-            <p class="service-desc">Sell online without the limitations of template solutions. Custom storefronts, marketplaces, and booking systems that convert.</p>
+            <h3 class="service-title">Business Process Automation</h3>
+            <p class="service-desc">
+              Eliminate manual work. Document processing, workflow automation, data pipelines, and system integrations that save your team hours every day and reduce errors to near zero.
+            </p>
           </div>
-        </div>
-        
-        <div class="reveal" style="margin-top: var(--space-xl); text-align: center;">
-          <a href="services.html" class="btn btn-outline">
-            Explore all services
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+          
+          <div class="service-card reveal" data-reveal-child>
+            <span class="service-num">04</span>
+            <h3 class="service-title">Data & Analytics Platforms</h3>
+            <p class="service-desc">
+              Turn your data into decisions. Real-time dashboards, reporting systems, and analytics platforms that give you visibility into every aspect of your business operations.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Process Section -->
     <section class="section" id="process">
       <div class="container">
         <div class="reveal">
-          <span class="section-label">How It Works</span>
-          <h2 class="section-title">From first call to launch—here's exactly what to expect.</h2>
+          <span class="section-label">How We Work</span>
+          <h2 class="section-title">Straightforward process. No surprises.</h2>
         </div>
         
-        <div class="process-steps">
-          <div class="process-step reveal">
+        <div class="process-steps reveal">
+          <div class="process-step" data-reveal-child>
             <div class="process-num">1</div>
-            <h3 class="process-title">Discovery Call</h3>
-            <p class="process-desc">30 minutes. We listen to your challenge, ask the right questions, and determine if we're the right fit. Proposal in 48 hours.</p>
+            <h3 class="process-title">Discovery</h3>
+            <p class="process-desc">
+              Tell us what you're trying to build. We'll discuss scope, technical approach, and give you an honest assessment of what's possible.
+            </p>
           </div>
           
-          <div class="process-step reveal">
+          <div class="process-step" data-reveal-child>
             <div class="process-num">2</div>
-            <h3 class="process-title">Fixed Quote</h3>
-            <p class="process-desc">A clear scope document with exactly what we'll build, how long it will take, and what it will cost. One number.</p>
+            <h3 class="process-title">Proposal</h3>
+            <p class="process-desc">
+              Clear scope document with deliverables, timeline, and investment required. We scope projects individually — no cookie-cutter pricing.
+            </p>
           </div>
           
-          <div class="process-step reveal">
+          <div class="process-step" data-reveal-child>
             <div class="process-num">3</div>
-            <h3 class="process-title">Weekly Updates</h3>
-            <p class="process-desc">Every week you'll see real progress—not slide decks. Working demos you can click through and test.</p>
+            <h3 class="process-title">Build</h3>
+            <p class="process-desc">
+              Agile development with regular check-ins. You see working software frequently, not just a big reveal at the end. Feedback loops keep us aligned.
+            </p>
           </div>
           
-          <div class="process-step reveal">
+          <div class="process-step" data-reveal-child>
             <div class="process-num">4</div>
-            <h3 class="process-title">Launch & Support</h3>
-            <p class="process-desc">We handle deployment, training, and handover. 30 days of support included. Your IP, fully owned.</p>
+            <h3 class="process-title">Deploy</h3>
+            <p class="process-desc">
+              We handle deployment, documentation, and knowledge transfer. Your code. Your IP. Ongoing support available for maintenance and iteration.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Directors Section -->
+    <section class="section" id="directors">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Leadership</span>
+          <h2 class="section-title">Meet the team behind GEE33.</h2>
+          <p class="section-desc">A senior team with decades of combined experience in software engineering, business operations, and strategic growth.</p>
+        </div>
+        
+        <div class="directors-grid reveal">
+          <div class="director-card" data-reveal-child>
+            <div class="director-avatar">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="url(#grad1)"/>
+                <circle cx="40" cy="32" r="12" fill="var(--void)"/>
+                <ellipse cx="40" cy="60" rx="18" ry="14" fill="var(--void)"/>
+                <defs>
+                  <linearGradient id="grad1" x1="0" y1="0" x2="80" y2="80">
+                    <stop offset="0%" stop-color="#6366f1"/>
+                    <stop offset="100%" stop-color="#8b5cf6"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3 class="director-name">Guneev Singh</h3>
+            <p class="director-role">Technical Director</p>
+            <p class="director-bio">
+              Full-stack engineer and system architect. Leads technical strategy and hands-on development across all GEE33 projects. Specializes in AI integration and scalable architectures.
+            </p>
+          </div>
+          
+          <div class="director-card" data-reveal-child>
+            <div class="director-avatar">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="url(#grad2)"/>
+                <circle cx="40" cy="32" r="12" fill="var(--void)"/>
+                <ellipse cx="40" cy="60" rx="18" ry="14" fill="var(--void)"/>
+                <defs>
+                  <linearGradient id="grad2" x1="0" y1="0" x2="80" y2="80">
+                    <stop offset="0%" stop-color="#06b6d4"/>
+                    <stop offset="100%" stop-color="#6366f1"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3 class="director-name">Henk "Swazi" Nel</h3>
+            <p class="director-role">Operations Director</p>
+            <p class="director-bio">
+              Drives operational excellence and project delivery. Ensures every engagement runs smoothly from kickoff to deployment. Deep experience in broadcast media and technology operations.
+            </p>
+          </div>
+          
+          <div class="director-card" data-reveal-child>
+            <div class="director-avatar">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="url(#grad3)"/>
+                <circle cx="40" cy="32" r="12" fill="var(--void)"/>
+                <ellipse cx="40" cy="60" rx="18" ry="14" fill="var(--void)"/>
+                <defs>
+                  <linearGradient id="grad3" x1="0" y1="0" x2="80" y2="80">
+                    <stop offset="0%" stop-color="#10b981"/>
+                    <stop offset="100%" stop-color="#06b6d4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3 class="director-name">Errol Pretorius</h3>
+            <p class="director-role">Strategy Director</p>
+            <p class="director-bio">
+              Shapes business strategy and client partnerships. Brings decades of industry experience and market insight to help clients identify the right solutions for their challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
     <section class="section contact" id="contact">
       <div class="container">
         <div class="contact-grid">
           <div class="reveal">
-            <h2 class="contact-headline">Ready to<br>move <span class="accent">faster?</span></h2>
-            <p class="contact-sub">Book a free 30-minute call. No pitch, no pressure—just an honest conversation about whether we can help.</p>
+            <h2 class="contact-headline">
+              Let's build<br>
+              <span class="accent">something great.</span>
+            </h2>
+            <p class="contact-sub">
+              Tell us about your project. We'll get back to you within 24 hours with an honest assessment of how we can help.
+            </p>
+            
+            <div class="contact-methods">
+              <a href="https://wa.me/27686222111" class="contact-method-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp Us
+              </a>
+              <a href="tel:+27686222111" class="contact-method-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +27 68 622 2111
+              </a>
+              <a href="mailto:hello@gee33.co.za" class="contact-method-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                hello@gee33.co.za
+              </a>
+            </div>
+            
+            <p class="contact-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bryanston, Johannesburg, South Africa
+            </p>
           </div>
           
           <form class="contact-form reveal" id="contactForm">
             <div class="form-field">
-              <label class="form-label" for="name">Your Name</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required>
+              <label class="form-label" for="name">Full Name *</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
             </div>
             
             <div class="form-field">
-              <label class="form-label" for="email">Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="john@company.co.za" required>
+              <label class="form-label" for="email">Email Address *</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@company.co.za" required>
             </div>
             
             <div class="form-field">
-              <label class="form-label" for="message">What challenge are you facing?</label>
-              <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project or the problem you're trying to solve..." required></textarea>
+              <label class="form-label" for="company">Company</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="Your company name">
+            </div>
+            
+            <div class="form-field">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+27 XX XXX XXXX">
+            </div>
+            
+            <div class="form-field">
+              <label class="form-label" for="message">Tell us about your project *</label>
+              <textarea class="form-input" id="message" name="message" placeholder="What are you looking to build? What problem are you trying to solve?" required></textarea>
             </div>
             
             <button type="submit" class="btn btn-primary form-submit">
-              Request a call
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+              Send via WhatsApp
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
             </button>
+            
+            <p class="form-note">Your message will open in WhatsApp for instant delivery.</p>
           </form>
         </div>
       </div>
@@ -361,15 +598,36 @@
 
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <p class="footer-copy">&copy; 2025 GEE33. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="mailto:hello@gee33.co.za" class="footer-link">hello@gee33.co.za</a>
-      <a href="tel:+27123456789" class="footer-link">+27 12 345 6789</a>
-      <a href="https://linkedin.com/company/gee33" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <path d="M24 6C14.059 6 6 14.059 6 24s8.059 18 18 18c6.627 0 12.452-3.58 15.588-8.912" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M24 15c-4.97 0-9 4.03-9 9s4.03 9 9 9" stroke="var(--cream-60)" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="32" y="10" width="3" height="12" rx="1.5" fill="var(--cream-60)"/>
+            <rect x="38" y="10" width="3" height="12" rx="1.5" fill="var(--accent)"/>
+          </svg>
+          <span class="logo-wordmark">GEE<span class="accent">33</span></span>
+        </a>
+        <p class="footer-tagline">Rapid software development studio.<br>Based in Bryanston, Johannesburg.</p>
+      </div>
+      
+      <div class="footer-contact">
+        <a href="tel:+27686222111" class="footer-link">+27 68 622 2111</a>
+        <a href="mailto:hello@gee33.co.za" class="footer-link">hello@gee33.co.za</a>
+        <a href="https://wa.me/27686222111" class="footer-link" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 GEE33. All rights reserved.</p>
+      <p class="footer-location">Bryanston, Johannesburg, South Africa</p>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
 </html>
