@@ -203,7 +203,7 @@
   };
 
   // ============================================================================
-  // WHATSAPP FORM HANDLING
+  // EMAIL FORM HANDLING
   // ============================================================================
   const initForms = () => {
     const contactForm = document.getElementById('contactForm');
@@ -225,26 +225,36 @@
           return;
         }
         
-        // Construct WhatsApp message
-        const whatsappMessage = `🚀 *New Project Enquiry*
+        // Construct email subject and body
+        const subject = `New Project Enquiry from ${name}${company ? ` (${company})` : ''}`;
+        
+        const emailBody = `Hi GEE33 Team,
 
-*Name:* ${name}
-*Email:* ${email}
-${company ? `*Company:* ${company}\n` : ''}${phone ? `*Phone:* ${phone}\n` : ''}
-*Message:*
-${message}`;
+I'm interested in discussing a potential project with you.
+
+Name: ${name}
+Email: ${email}${company ? `\nCompany: ${company}` : ''}${phone ? `\nPhone: ${phone}` : ''}
+
+Project Details:
+${message}
+
+Looking forward to hearing from you!
+
+Best regards,
+${name}`;
         
-        // Encode message for URL
-        const encodedMessage = encodeURIComponent(whatsappMessage);
+        // Encode for mailto URL
+        const encodedSubject = encodeURIComponent(subject);
+        const encodedBody = encodeURIComponent(emailBody);
         
-        // WhatsApp number (South Africa format)
-        const whatsappNumber = '27686222111';
+        // GEE33 email address
+        const geeEmail = 'hello@gee33.co.za';
         
-        // Create WhatsApp URL
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        // Create mailto URL
+        const mailtoURL = `mailto:${geeEmail}?subject=${encodedSubject}&body=${encodedBody}`;
         
-        // Open WhatsApp in new tab
-        window.open(whatsappURL, '_blank');
+        // Open email client
+        window.location.href = mailtoURL;
         
         // Show success feedback
         const submitBtn = contactForm.querySelector('[type="submit"]');
@@ -254,7 +264,7 @@ ${message}`;
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="20 6 9 17 4 12"/>
           </svg>
-          Opening WhatsApp...
+          Opening Email...
         `;
         
         // Reset form and button

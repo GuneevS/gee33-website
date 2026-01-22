@@ -9,9 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
     .story-section {
@@ -234,10 +232,13 @@
           </linearGradient>
         </defs>
       </svg>
-      <span class="logo-wordmark">GEE<span class="accent">33</span></span>
+      <div class="logo-text">
+        <span class="logo-wordmark">GEE<span class="accent">33</span></span>
+        <span class="logo-tagline">Your Edge, Engineered</span>
+      </div>
     </a>
     <div class="nav-links">
-      <a href="index.html#products" class="nav-link">Our Work</a>
+      <a href="index.html#products" class="nav-link">Work</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="about.html" class="nav-link" style="color: var(--cream);">Team</a>
       <a href="contact.html" class="nav-cta">Contact</a>
@@ -273,71 +274,41 @@
       <div class="container">
         <div class="reveal">
           <span class="section-label">Leadership</span>
-          <h2 class="section-title">Meet our directors.</h2>
+          <h2 class="section-title">Meet our <span class="accent">directors.</span></h2>
           <p class="section-desc">A senior team with decades of combined experience in software engineering, business operations, and strategic growth.</p>
         </div>
         
         <div class="directors-grid reveal" style="margin-top: 3rem;">
           <div class="director-card" data-reveal-child>
             <div class="director-avatar">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="40" fill="url(#grad1-about)"/>
-                <circle cx="40" cy="32" r="12" fill="var(--void)"/>
-                <ellipse cx="40" cy="60" rx="18" ry="14" fill="var(--void)"/>
-                <defs>
-                  <linearGradient id="grad1-about" x1="0" y1="0" x2="80" y2="80">
-                    <stop offset="0%" stop-color="#6366f1"/>
-                    <stop offset="100%" stop-color="#8b5cf6"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img src="assets/guneev-singh.png" alt="Guneev Singh - CEO at GEE33" loading="lazy">
             </div>
             <h3 class="director-name">Guneev Singh</h3>
-            <p class="director-role">Technical Director</p>
+            <p class="director-role">Chief Executive Officer</p>
             <p class="director-bio">
-              Full-stack engineer and system architect. Leads technical strategy and hands-on development across all GEE33 projects. Specializes in AI integration, scalable architectures, and rapid prototyping.
+              The one who writes the code and signs the cheques. Guneev leads GEE33's technical vision while keeping one eye on the business strategy. With deep expertise in media tech and AI systems, he's the architect behind our most ambitious builds. Fair warning: he'll make your project work, but he might also beat you at chess while doing it.
             </p>
           </div>
           
           <div class="director-card" data-reveal-child>
             <div class="director-avatar">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="40" fill="url(#grad2-about)"/>
-                <circle cx="40" cy="32" r="12" fill="var(--void)"/>
-                <ellipse cx="40" cy="60" rx="18" ry="14" fill="var(--void)"/>
-                <defs>
-                  <linearGradient id="grad2-about" x1="0" y1="0" x2="80" y2="80">
-                    <stop offset="0%" stop-color="#06b6d4"/>
-                    <stop offset="100%" stop-color="#6366f1"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img src="assets/henk-nel.png" alt="Henk Swazi Nel - Client Director at GEE33" loading="lazy">
             </div>
             <h3 class="director-name">Henk "Swazi" Nel</h3>
-            <p class="director-role">Operations Director</p>
+            <p class="director-role">Client Director</p>
             <p class="director-bio">
-              Drives operational excellence and project delivery. Ensures every engagement runs smoothly from kickoff to deployment. Deep experience in broadcast media and technology operations.
+              The man who makes sure promises become reality. Swazi bridges the gap between what you need and what we deliver, drawing on his finance advisory background to keep projects aligned with business outcomes. He's got a knack for numbers, an eye for opportunity, and an uncanny ability to remember exactly what was agreed upon.
             </p>
           </div>
           
           <div class="director-card" data-reveal-child>
             <div class="director-avatar">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="40" fill="url(#grad3-about)"/>
-                <circle cx="40" cy="32" r="12" fill="var(--void)"/>
-                <ellipse cx="40" cy="60" rx="18" ry="14" fill="var(--void)"/>
-                <defs>
-                  <linearGradient id="grad3-about" x1="0" y1="0" x2="80" y2="80">
-                    <stop offset="0%" stop-color="#10b981"/>
-                    <stop offset="100%" stop-color="#06b6d4"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img src="assets/errol-pretorius.png" alt="Errol Pretorius - Advisory Director at GEE33" loading="lazy">
             </div>
             <h3 class="director-name">Errol Pretorius</h3>
-            <p class="director-role">Strategy Director</p>
+            <p class="director-role">Advisory Director</p>
             <p class="director-bio">
-              Shapes business strategy and client partnerships. Brings decades of industry experience and market insight to help clients identify the right solutions for their challenges.
+              The wise one. With decades navigating the media and hospitality industries, Errol brings the kind of perspective you only get from doing the hard yards. He leads with a people-first philosophy that keeps GEE33 grounded. When things get complicated, he's the calm voice asking the right questions. Also makes excellent coffee.
             </p>
           </div>
         </div>
