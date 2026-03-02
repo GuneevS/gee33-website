@@ -2102,3 +2102,11 @@ textarea.form-input {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
+/* Form submit spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}

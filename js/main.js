@@ -203,89 +203,22 @@
   };
 
   // ============================================================================
-  // EMAIL FORM HANDLING
+  // WEB3FORMS LEAD CAPTURE
   // ============================================================================
+  const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
   const initForms = () => {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Collect form data
-        const name = document.getElementById('name')?.value || '';
-        const email = document.getElementById('email')?.value || '';
-        const company = document.getElementById('company')?.value || '';
-        const phone = document.getElementById('phone')?.value || '';
-        const message = document.getElementById('message')?.value || '';
-        
-        // Validate required fields
-        if (!name || !email || !message) {
-          alert('Please fill in all required fields.');
-          return;
-        }
-        
-        // Construct email subject and body
-        const subject = `New Project Enquiry from ${name}${company ? ` (${company})` : ''}`;
-        
-        const emailBody = `Hi GEE33 Team,
+    const allForms = document.querySelectorAll('form');
 
-I'm interested in discussing a potential project with you.
-
-Name: ${name}
-Email: ${email}${company ? `\nCompany: ${company}` : ''}${phone ? `\nPhone: ${phone}` : ''}
-
-Project Details:
-${message}
-
-Looking forward to hearing from you!
-
-Best regards,
-${name}`;
-        
-        // Encode for mailto URL
-        const encodedSubject = encodeURIComponent(subject);
-        const encodedBody = encodeURIComponent(emailBody);
-        
-        // GEE33 email address
-        const geeEmail = 'hello@gee33.co.za';
-        
-        // Create mailto URL
-        const mailtoURL = `mailto:${geeEmail}?subject=${encodedSubject}&body=${encodedBody}`;
-        
-        // Open email client
-        window.location.href = mailtoURL;
-        
-        // Show success feedback
-        const submitBtn = contactForm.querySelector('[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = `
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          Opening Email...
-        `;
-        
-        // Reset form and button
-        setTimeout(() => {
-          contactForm.reset();
-          submitBtn.innerHTML = originalText;
-        }, 2000);
-      });
-    }
-    
-    // Handle any other forms (non-WhatsApp)
-    const otherForms = document.querySelectorAll('form:not(#contactForm)');
-    
-    otherForms.forEach(form => {
+    allForms.forEach(form => {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const submitBtn = form.querySelector('[type="submit"]');
+        if (!submitBtn) return;
+
         const originalText = submitBtn.innerHTML;
-        
-        // Loading state
+
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
           <svg class="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -294,39 +227,58 @@ ${name}`;
           </svg>
           Sending...
         `;
-        
-        // Collect form data
+
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        
+
         try {
-          // Simulate API call - replace with actual endpoint
-          await new Promise(resolve => setTimeout(resolve, 1500));
-          
-          // Success state
+          const response = await fetch(WEB3FORMS_ENDPOINT, {
+            method: 'POST',
+            body: formData
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            submitBtn.innerHTML = `
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Sent Successfully!
+            `;
+            submitBtn.style.background = '#22c55e';
+            submitBtn.style.borderColor = '#22c55e';
+
+            form.reset();
+
+            setTimeout(() => {
+              submitBtn.innerHTML = originalText;
+              submitBtn.style.background = '';
+              submitBtn.style.borderColor = '';
+              submitBtn.disabled = false;
+            }, 4000);
+          } else {
+            throw new Error(result.message || 'Submission failed');
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+
           submitBtn.innerHTML = `
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 6 9 17 4 12"/>
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
             </svg>
-            Sent!
+            Failed — Try Again
           `;
-          
-          form.reset();
-          
-          // Reset button after delay
-          setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-          }, 3000);
-          
-        } catch (error) {
-          // Error state
-          submitBtn.innerHTML = 'Error - Try again';
+          submitBtn.style.background = '#ef4444';
+          submitBtn.style.borderColor = '#ef4444';
           submitBtn.disabled = false;
-          
+
           setTimeout(() => {
             submitBtn.innerHTML = originalText;
-          }, 3000);
+            submitBtn.style.background = '';
+            submitBtn.style.borderColor = '';
+          }, 4000);
         }
       });
     });

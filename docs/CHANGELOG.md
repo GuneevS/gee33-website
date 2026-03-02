@@ -53,8 +53,14 @@
    - Errol Pretorius - Advisory Director (wisdom, people-first approach, media & hospitality experience)
 
 ### Contact & Lead Generation
-- Email-based lead capture via mailto link
-- Form submits to hello@gee33.co.za
+- **Web3Forms API integration** for real-time lead capture (access key: configured)
+  - All form submissions go directly to inbox via Web3Forms
+  - Honeypot spam protection (`botcheck` hidden field)
+  - Loading, success, and error states with visual feedback
+  - Auto-resets after 4 seconds on success/error
+- **Two active forms**: Homepage contact form + dedicated Contact page form
+- Each form captures: Full Name, Email, Company, Phone, Project Details
+- Subject lines differentiate between "Homepage" and "Contact Page" submissions
 - Contact methods: WhatsApp, Phone, Email
 - Location: Bryanston, Johannesburg, South Africa
 - Friendly CTA copy: "Let's chat over a game of padel"
